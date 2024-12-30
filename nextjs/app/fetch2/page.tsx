@@ -3,6 +3,10 @@
 
 import useSWR from "swr";
 
+interface Post {
+  test: number;
+}
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Posts() {
@@ -13,7 +17,7 @@ export default function Posts() {
 
   return (
     <ul>
-      {data.map((post: any) => (
+      {data.map((post: Post) => (
         <li key={post.test}>{post.test}</li>
       ))}
     </ul>
